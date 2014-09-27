@@ -1,13 +1,14 @@
 #main_container {
-    background-color: #fefff6;
+    background-color: #a7bab9;
     max-width: 900px;
 }
 
 #header {
     color: #e5eaff;
     min-height: 100px;
-    background-color: green;
+    background-color: #14263d;
     font-weight: bold;
+    max-width: 900px;
 }
 
 img {
@@ -15,9 +16,9 @@ img {
 }
 
 .generator_container {
-    background-color: #f9ffd7;
+    background-color: #cee2ff;
     text-align: center;
-    border: ridge #f9ffd7;
+    border: ridge #97c4ff;
 }
 
 .errors {

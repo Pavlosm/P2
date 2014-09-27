@@ -36,15 +36,25 @@
         <div class="generator_container">
             <div class="password"> <?=$password?></div>
             <div class="errors">
-
+                <?=$error?>
             </div>
-            <form>
-                <input type="submit" name="generate" value="generate password" class="btn btn-default btn-lg"> </br>
-                Number of words: <input type="text" name="num_words" size="3px"> &nbsp; &nbsp;
-                <input type="checkbox" name="number" value="Bike">&nbsp; Add a number &nbsp; &nbsp;
-                <input type="checkbox" name="special_char" value="Car"> &nbsp; Add a special character &nbsp; &nbsp;
-                <input type="checkbox" name="number" value="Bike">&nbsp; Capitalize first password letter &nbsp; &nbsp;
-                <input type="checkbox" name="special_char" value="Car">I have a car &nbsp;
+            <form action="index.php" method="POST">
+
+                <input type="submit" value="Generate Password" class="btn btn-default btn-lg"> </br>
+                <label for="num_words">number of words</label>
+                <input type="text" name="num_words" value="4" size="3px">
+                <div class="theCheckBox">
+                    <label for="number">add a number</label>
+                    <input type="checkbox" name="number" value="yes">
+                </div>
+                <div class="theCheckBox">
+                    <label for="special_char">ad a special char</label>
+                    <input type="checkbox" name="special_char" value="yes">
+                </div>
+                <div class="theCheckBox">
+                    <label for="capital_letters">capitalize first letter</label>
+                    <input type="checkbox" name="capital_letter" value="yes">
+                </div>
             </form>
             </br>
             <image id="xkcd_image" src="password_strength.png" alt="password-strength "/>
