@@ -1,0 +1,53 @@
+#main_container {
+    background-color: #fefff6;
+    max-width: 900px;
+}
+
+#header {
+    color: #e5eaff;
+    min-height: 100px;
+    background-color: green;
+    font-weight: bold;
+}
+
+img {
+    max-height: 400px;
+}
+
+.generator_container {
+    background-color: #f9ffd7;
+    text-align: center;
+    border: ridge #f9ffd7;
+}
+
+.errors {
+    max-width: 80%;
+    background-color: #fbff92;
+    margin: 0px auto 10px auto;
+    color: red;
+}
+
+.password {
+    max-width: 80%;
+    background-color: #3d3b3c;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px auto 10px auto;
+    min-width: 60px;
+    border: ridge #fbffb4;
+    color: #fbffb4;
+}
+
+.theCheckbox {
+    max-width: 250px;
+    background-color: #deffbc;
+    border: groove #fff95b;
+    margin: 5px auto 0px auto;
+    text-align: left;
+}
+
+.btn {
+    background-color: #586b4a;
+    border: outset #fff95b;
+    color: white;
+}
