@@ -34,12 +34,9 @@
             </ul>
         </p>
         <div class="generator_container">
-            <div class="password"> Default text</div>
+            <div class="password"> <?=$password?></div>
             <div class="errors">
-                <?php
-                    echo $word_list;
 
-                ?>
             </div>
             <form>
                 <input type="submit" name="generate" value="generate password" class="btn btn-default btn-lg"> </br>
