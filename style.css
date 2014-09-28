@@ -1,5 +1,5 @@
 #main_container {
-    background-color: #a7bab9;
+    background-color: #f2f8ff;
     max-width: 900px;
 }
 
@@ -11,14 +11,20 @@
     max-width: 900px;
 }
 
-img {
+#xkcd_image {
     max-height: 400px;
+    cursor: hover;
 }
 
 .generator_container {
-    background-color: #cee2ff;
+    background-color: #e1e5ec;
     text-align: center;
-    border: ridge #97c4ff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    -webkit-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+    -moz-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+    box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
 }
 
 .errors {
@@ -30,13 +36,13 @@ img {
 
 .password {
     max-width: 80%;
-    background-color: #3d3b3c;
+    background-color: #4d506f;
     font-size: 30px;
     font-weight: bold;
     margin: 10px auto 10px auto;
     min-width: 60px;
-    border: ridge #fbffb4;
-    color: #fbffb4;
+    border: ridge #cee2ff;
+    color: #cee2ff;
 }
 
 .theCheckbox {
@@ -48,7 +54,7 @@ img {
 }
 
 .btn {
-    background-color: #586b4a;
+    background-color: #414f6b;
     border: outset #fff95b;
     color: white;
 }

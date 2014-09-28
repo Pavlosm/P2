@@ -7,6 +7,7 @@
     <script src="jquery.js"></script>
 
     <?php require('logic.php');?>
+
 </head>
 
 <body>
@@ -21,45 +22,44 @@
         </p>
         <h3>How to use the generator</h3>
         <p>
-            Using the password generator is simple. You just have to specify your password requirements by checking the
-            checkboxes and a random password is generated for you.
+            Using the password generator is simple. You just have to specify your password requirements by typing the
+            desired number of words (length of password) and checking, or not, the checkboxes and a random password
+            is generated for you.
         </p>
         <p>
             You can choose:
             <ul>
                 <li>The number of words</li>
-                <li>To include a number or not</li>
-                <li>To include a special symbol or not ()</li>
-                <li>To uppercase the first of the password or not</li>
+                <li>To include a number between 1-9 at the end</li>
+                <li>To include a special symbol at random position from the symbols ( !@#$%^&*()_+ )</li>
+                <li>To uppercase the first letter of the password</li>
             </ul>
         </p>
         <div class="generator_container">
-            <div class="password"> <?=$password?></div>
-            <div class="errors">
-                <?=$error?>
-            </div>
-            <form action="index.php" method="POST">
+            <h2> New Password:</h2>
+            <div class="password"> <?=$password?> </div>
 
-                <input type="submit" value="Generate Password" class="btn btn-default btn-lg"> </br>
+            <form action="index.php" method="POST">
+                <input type="submit" value="Generate Password" class="btn btn-default btn-lg"> <br />
+
                 <label for="num_words">number of words</label>
-                <input type="text" name="num_words" value="4" size="3px">
-                <div class="theCheckBox">
-                    <label for="number">add a number</label>
-                    <input type="checkbox" name="number" value="yes">
-                </div>
-                <div class="theCheckBox">
-                    <label for="special_char">ad a special char</label>
-                    <input type="checkbox" name="special_char" value="yes">
-                </div>
-                <div class="theCheckBox">
-                    <label for="capital_letters">capitalize first letter</label>
-                    <input type="checkbox" name="capital_letter" value="yes">
-                </div>
+                <input type="text" name="num_words" value="4" size="3px"> <br />
+
+                <label for="number">add a number</label>
+                <input type="checkbox" name="number" value="yes"> <br />
+
+                <label for="special_char">add a special char</label>
+                <input type="checkbox" name="special_char" value="yes">  <br />
+
+                <label for="capital_letters">capitalize first letter</label>
+                <input type="checkbox" name="capital_letter" value="yes">  <br />
             </form>
-            </br>
-            <image id="xkcd_image" src="password_strength.png" alt="password-strength "/>
+            <br />
+            <a href="http://xkcd.com/936/" target="_blank">
+                <image id="xkcd_image" src="password_strength.png" alt="password-strength "/>
+            </a>
         </div>
-        <h3>What is XKDC and why is it "better"</h3>
+        <h3>What is XKDC and why is it "better" (at least my understanding of it...)</h3>
         <h4>Password strength</h4>
         <p>
             Braking a password computationally, is all about searching all possible combinations of the components of
@@ -69,10 +69,10 @@
         <p>
             Suppose that you want to create a password using only 2 characters 'a' and 'b', with a length of 2. In this
             case the set of components is {a, b}. All possible combinations are just two 'ab' and 'ba'. Therefore, the
-            worst case scenario to guess that password would be two tries.
+            worst case scenario to guess that password would be -> two tries.
         </p>
         <p>
-            Increasing the length of the password to 3, will increase the number of possible combinations to 2^4 = 16
+            Increasing the length of the password to 3, will increase the number of possible combinations to 2^3 = 8
             {aaa, aab, aba, baa, bbb, bba, bab, abb }. From this it is obvious that the longer the password the better
             its strength.
         </p>
@@ -82,7 +82,7 @@
             pool of components the harder it becomes to break the password.
         </p>
         <p>
-            This leads to a general equation for the password strength of the form:
+            This leads to a general equation for the password strength (entropy) of the form:
         <ul>
             <li> pass-strength = a^b </li>
             <li> a: the number of components of the set </li>
@@ -94,12 +94,12 @@
             <li> Use both lower and upper case alphabetical characters: ( a = 52 )</li>
             <li> Use 12 special characters in addition to the above set: ( a = 64 )</li>
         </ul>
-        So, using the same password set, the third set would generate a computationally stronger password to break.
+            So, using the same password set, the third set would generate a computationally stronger password to break.
         </p>
         <p>
             How easy is however to remember a seemingly random password obtained by the third set above, say 'iETh$#y'?
-            Well this looks hard and it is definitely hard to remember, but is it harder, from a computational
-            standpoint, than the simple dumb password 'Pavlos$' (my name)? According to the above it is not; they have
+            Well this looks strong and it is definitely hard to remember, but is it harder from a computational
+            standpoint than the simple dumb password 'Pavlos$' (my name)? According to the above it is not; they have
             the same length and use the same character set.
         </p>
         <h4>xkdc approach</h4>
@@ -111,11 +111,10 @@
         <p>
             To do this we can create a password that uses actual words that have a meaning. Now in this case the
             individual components will be the actual words, so if we use a pool of 2048 words to create a 3-word long
-            password, it would need 2048^3 tries to break it and additionally it would be easy for us to do so.
+            password, it would need 2048^3 tries to break it and additionally it would be easy for us to remember it.
         </p>
         <p>
-            Finally on top of that we can capitalize letters and add special characters which will boost its strength
-            even more.
+            On top of that we can capitalize letters and add special characters which will boost its strength even more.
         </p>
         <p>
             And this is the xkcd style approach.

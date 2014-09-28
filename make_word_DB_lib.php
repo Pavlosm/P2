@@ -7,7 +7,6 @@
  * All functions here are explicitly developed for the URL of the above website.
  */
 
-
 function get_word_DB() {
     create_word_DB();
     $words = file_get_contents("word_DB.txt");
@@ -21,7 +20,7 @@ function get_word_DB() {
  */
 function create_word_DB() {
 
-    if (! file_exists("word_DB.txt")){
+    if (! file_exists("word_DB.txt")) {
 
         $word_list = "";
 
