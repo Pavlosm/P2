@@ -5,9 +5,14 @@ Live URL Link for P2
 --------------------
 http://p2.cpmi.ninja
 
+Demo URL Link for P2
+--------------------
+
+
 Short description
 -----------------
-n/a
+P2 is a XKCD style password generator. It includes the generator and a 
+description of what XKCD password is.
 
 Notes for TA
 ------------

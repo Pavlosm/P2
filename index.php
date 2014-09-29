@@ -3,8 +3,11 @@
 <head>
     <title>Pavlos Migkiros xkcd style password generator</title>
     <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="style.css" type="text.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <script src="jquery.js"></script>
+
+    <?php require('logic.php');?>
+
     <style type="text/css">
 
         .container {
@@ -21,6 +24,13 @@
             border-bottom: solid #071123 thick;
         }
 
+        .footer {
+            border-top: solid #071123 thick;
+            padding-top: 5px;
+            color: #e5eaff;
+            min-height: 30px;
+            background-color: #14263d;
+        }
         img {
             max-width: 60%;
             height: auto;
@@ -42,7 +52,7 @@
         .password {
             max-width: 80%;
             background-color: #4d506f;
-            font-size: 30px;
+            font-size: 25px;
             margin: 10px auto 10px auto;
             min-width: 60px;
             border: inset 15px #cee2ff;
@@ -55,14 +65,24 @@
             color: white;
         }
 
-    </style>
-    <?php require('logic.php');?>
+        .footer-list {
+            font-size: small;
+            list-style-type: none;
+        }
 
+        h6 {
+            text-decoration: underline;
+        }
+
+        .word-box {
+            -moz-box-sizing: 3px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container header">
-        <h1>Pav's XKCD Password Generator</h1>
+        <h1>Pav's XKCD Password Generator, for (CSCIE-15)</h1>
     </div>
     <div class="container main-container">
 
@@ -95,7 +115,7 @@
                 <input type="submit" value="Generate Password" class="btn btn-default btn-lg"> <br /><br />
 
                 <label for="num_words">number of words</label>
-                <input type="text" name="num_words" value="4" size="3px"> <br />
+                <input type="text" name="num_words" class="word-box" value="4"> <br />
 
                 <label for="number">add a number</label>
                 <input type="checkbox" name="number" value="yes"> <br />
@@ -109,7 +129,7 @@
             </form>
             <br />
             <a href="http://xkcd.com/936/" target="_blank">
-                <image class="xkcd_image" src="password_strength.png" alt="password-strength "/>
+                <image class="xkcd_image" src="password_strength.png" alt="password-strength ">
             </a>
         </div>
         <h3>What is XKDC and why is it "better" (at least my understanding of it...)</h3>
@@ -136,18 +156,19 @@
         </p>
         <p>
             This leads to a general equation for the password strength (entropy) of the form:
-        <ul>
-            <li> pass-strength = a^b </li>
-            <li> a: the number of components of the set </li>
-            <li> b: the length of the password </li>
-        </ul>
-        Below there are three example sets (from "weaker" to "stronger"):
-        <ul>
-            <li> Use only lower case alphabetical characters: ( a = 26 )</li>
-            <li> Use both lower and upper case alphabetical characters: ( a = 52 )</li>
-            <li> Use 12 special characters in addition to the above set: ( a = 64 )</li>
-        </ul>
-            So, using the same password set, the third set would generate a computationally stronger password to break.
+            <ul>
+                <li> pass-strength = a^b </li>
+                <li> a: the number of components of the set </li>
+                <li> b: the length of the password </li>
+            </ul>
+            Below there are three example sets (from "weaker" to "stronger"):
+            <ul>
+                <li> Use only lower case alphabetical characters: ( a = 26 )</li>
+                <li> Use both lower and upper case alphabetical characters: ( a = 52 )</li>
+                <li> Use 12 special characters in addition to the above set: ( a = 64 )</li>
+            </ul>
+            So, using the same password length, the third set would generate a computationally stronger password to
+            break.
         </p>
         <p>
             How easy is however to remember a seemingly random password obtained by the third set above, say 'iETh$#y'?
@@ -157,9 +178,9 @@
         </p>
         <h4>xkdc approach</h4>
         <p>
-            Instead of using the usual approach, which is creating an ugly and difficult to memorize lets say 12-char
-            password which will have upper and lower case letters, special chars and numbers, we can create a much
-            stronger one which will be user friendly.
+            Instead of using the "standard" approach, which is creating an ugly and difficult to memorize password with
+            upper and lower case letters, special chars and numbers, we can create a much stronger one which will be
+            user friendly.
         </p>
         <p>
             To do this we can create a password that uses actual words that have a meaning. Now in this case the
@@ -173,6 +194,16 @@
             And this is the xkcd style approach.
         </p>
     </div>
+    <footer>
+        <div class="container footer">
+            <h6>Links to projects:</h6>
+            <ul class="footer-list">
+                <li><a href="http://p1.cpmi.ninja"> Project 1</a></li>
+                <li><a href="http://p3.cpmi.ninja"> Project 3</a></li>
+                <li><a href="http://p4.cpmi.ninja"> Project 4</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 
