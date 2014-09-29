@@ -40,10 +40,13 @@ function make_password($word_list, $num_of_words, $add_number, $add_special_char
 
     $rand_word_keys = array_rand($word_list, $number_of_words);
 
-    $new_password = "";
-
-    foreach($rand_word_keys as $word_key)
-        $new_password .= $word_list[$word_key]."-";
+    if ( is_integer($rand_word_keys) ) {
+        $new_password = $word_list[$rand_word_keys];
+    } else {
+        $new_password = "";
+        foreach($rand_word_keys as $word_key)
+            $new_password .= $word_list[$word_key]."-";
+    }
 
     $new_password = trim($new_password, "-");
 

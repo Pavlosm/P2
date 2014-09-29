@@ -5,34 +5,86 @@
     <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="style.css" type="text.css">
     <script src="jquery.js"></script>
+    <style type="text/css">
 
+        .container {
+            background-color: #F2F8FF;
+            max-width: 900px;
+        }
+
+        .header {
+            color: #e5eaff;
+            min-height: 100px;
+            background-color: #14263d;
+            font-weight: bold;
+            max-width: 900px;
+            border-bottom: solid #071123 thick;
+        }
+
+        img {
+            max-width: 60%;
+            height: auto;
+            width: auto\9;
+            cursor: hover;
+        }
+
+        .generator_container {
+            background-color: #e1e5ec;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 40px;
+            border-radius: 30px;
+            -webkit-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+            -moz-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+            box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+        }
+
+        .password {
+            max-width: 80%;
+            background-color: #4d506f;
+            font-size: 30px;
+            margin: 10px auto 10px auto;
+            min-width: 60px;
+            border: inset 15px #cee2ff;
+            color: #cee2ff;
+        }
+
+        .btn {
+            background-color: #414f6b;
+            border: outset #c0ba56 thick;
+            color: white;
+        }
+
+    </style>
     <?php require('logic.php');?>
 
 </head>
 
 <body>
-    <div id="header" class="container">
+    <div class="container header">
         <h1>Pav's XKCD Password Generator</h1>
     </div>
-    <div id="main_container" class="container">
+    <div class="container main-container">
 
         <h2>This is an xkcd password generator</h2>
         <p>
             This page has a password generator which you can use to create a strong easy-memorable xkcd style password.
+            XKDC style password is based on a comic which suggests using words or phrases to create our passwords rather
+            than using a single-word ugly password like "pASS%worD7", which is quite hard to memorize.
         </p>
         <h3>How to use the generator</h3>
         <p>
             Using the password generator is simple. You just have to specify your password requirements by typing the
-            desired number of words (length of password) and checking, or not, the checkboxes and a random password
-            is generated for you.
+            desired number of words (length of password) and choosing some additional parameters by checking the
+            checkboxes.
         </p>
         <p>
-            You can choose:
+            Specifically you can choose:
             <ul>
-                <li>The number of words</li>
-                <li>To include a number between 1-9 at the end</li>
-                <li>To include a special symbol at random position from the symbols ( !@#$%^&*()_+ )</li>
-                <li>To uppercase the first letter of the password</li>
+                <li>the number of words (1-6 words)</li>
+                <li>to include a number between 1-9 at the end</li>
+                <li>to include a special symbol at a random position, from the symbols ( !@#$%^&*()_+ )</li>
+                <li>to uppercase the first letter of the password</li>
             </ul>
         </p>
         <div class="generator_container">
@@ -40,7 +92,7 @@
             <div class="password"> <?=$password?> </div>
 
             <form action="index.php" method="POST">
-                <input type="submit" value="Generate Password" class="btn btn-default btn-lg"> <br />
+                <input type="submit" value="Generate Password" class="btn btn-default btn-lg"> <br /><br />
 
                 <label for="num_words">number of words</label>
                 <input type="text" name="num_words" value="4" size="3px"> <br />
@@ -53,10 +105,11 @@
 
                 <label for="capital_letters">capitalize first letter</label>
                 <input type="checkbox" name="capital_letter" value="yes">  <br />
+
             </form>
             <br />
             <a href="http://xkcd.com/936/" target="_blank">
-                <image id="xkcd_image" src="password_strength.png" alt="password-strength "/>
+                <image class="xkcd_image" src="password_strength.png" alt="password-strength "/>
             </a>
         </div>
         <h3>What is XKDC and why is it "better" (at least my understanding of it...)</h3>
