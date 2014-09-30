@@ -8,76 +8,6 @@
 
     <?php require('logic.php');?>
 
-    <style type="text/css">
-
-        .container {
-            background-color: #F2F8FF;
-            max-width: 900px;
-        }
-
-        .header {
-            color: #e5eaff;
-            min-height: 100px;
-            background-color: #14263d;
-            font-weight: bold;
-            max-width: 900px;
-            border-bottom: solid #071123 thick;
-        }
-
-        .footer {
-            border-top: solid #071123 thick;
-            padding-top: 5px;
-            color: #e5eaff;
-            min-height: 30px;
-            background-color: #14263d;
-        }
-        img {
-            max-width: 60%;
-            height: auto;
-            width: auto\9;
-            cursor: hover;
-        }
-
-        .generator_container {
-            background-color: #e1e5ec;
-            text-align: center;
-            padding-top: 10px;
-            padding-bottom: 40px;
-            border-radius: 30px;
-            -webkit-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
-            -moz-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
-            box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
-        }
-
-        .password {
-            max-width: 80%;
-            background-color: #4d506f;
-            font-size: 25px;
-            margin: 10px auto 10px auto;
-            min-width: 60px;
-            border: inset 15px #cee2ff;
-            color: #cee2ff;
-        }
-
-        .btn {
-            background-color: #414f6b;
-            border: outset #c0ba56 thick;
-            color: white;
-        }
-
-        .footer-list {
-            font-size: small;
-            list-style-type: none;
-        }
-
-        h6 {
-            text-decoration: underline;
-        }
-
-        .word-box {
-            -moz-box-sizing: 3px;
-        }
-    </style>
 </head>
 
 <body>
@@ -90,7 +20,8 @@
         <p>
             This page has a password generator which you can use to create a strong easy-memorable xkcd style password.
             XKDC style password is based on a comic which suggests using words or phrases to create our passwords rather
-            than using a single-word ugly password like "pASS%worD7", which is quite hard to memorize.
+            than using a single-word ugly password like "pASS%worD7", which is quite hard to memorize. So, the xkcd
+            style password you create here will look like more or less like a sequence of "-" separated words.
         </p>
         <h3>How to use the generator</h3>
         <p>
@@ -98,15 +29,14 @@
             desired number of words (length of password) and choosing some additional parameters by checking the
             checkboxes.
         </p>
-        <p>
-            Specifically you can choose:
-            <ul>
-                <li>the number of words (1-6 words)</li>
-                <li>to include a number between 1-9 at the end</li>
-                <li>to include a special symbol at a random position, from the symbols ( !@#$%^&*()_+ )</li>
-                <li>to uppercase the first letter of the password</li>
-            </ul>
-        </p>
+         Specifically you can choose:
+         <ul>
+             <li>the number of words (1-6 words)</li>
+             <li>to include a number between 1-9 at the end</li>
+             <li>to include a special symbol at a random position, from the symbols ( !@#$%^&#38;*()_+ )</li>
+             <li>to uppercase the first letter of the password</li>
+         </ul>
+
         <div class="generator_container">
             <h2> New Password:</h2>
             <div class="password"> <?=$password?> </div>
@@ -129,7 +59,7 @@
             </form>
             <br />
             <a href="http://xkcd.com/936/" target="_blank">
-                <image class="xkcd_image" src="password_strength.png" alt="password-strength ">
+                <img class="xkcd_image" src="password_strength.png" alt="password-strength ">
             </a>
         </div>
         <h3>What is XKDC and why is it "better" (at least my understanding of it...)</h3>
@@ -154,19 +84,20 @@
             choose from, to create a 3-letter password. All available combinations now are 3^3 = 27. So, the bigger the
             pool of components the harder it becomes to break the password.
         </p>
+
+        This leads to a general equation for the password strength (entropy) of the form:
+        <ul>
+            <li> pass-strength = a^b </li>
+            <li> a: the number of components of the set </li>
+            <li> b: the length of the password </li>
+        </ul>
+        Below there are three example sets (from "weaker" to "stronger"):
+        <ul>
+            <li> Use only lower case alphabetical characters: ( a = 26 )</li>
+            <li> Use both lower and upper case alphabetical characters: ( a = 52 )</li>
+            <li> Use 12 special characters in addition to the above set: ( a = 64 )</li>
+        </ul>
         <p>
-            This leads to a general equation for the password strength (entropy) of the form:
-            <ul>
-                <li> pass-strength = a^b </li>
-                <li> a: the number of components of the set </li>
-                <li> b: the length of the password </li>
-            </ul>
-            Below there are three example sets (from "weaker" to "stronger"):
-            <ul>
-                <li> Use only lower case alphabetical characters: ( a = 26 )</li>
-                <li> Use both lower and upper case alphabetical characters: ( a = 52 )</li>
-                <li> Use 12 special characters in addition to the above set: ( a = 64 )</li>
-            </ul>
             So, using the same password length, the third set would generate a computationally stronger password to
             break.
         </p>
@@ -193,17 +124,18 @@
         <p>
             And this is the xkcd style approach.
         </p>
+        <footer>
+            <div class="container footer">
+                <h6>Links to projects:</h6>
+                <ul class="footer-list">
+                    <li><a href="http://p1.cpmi.ninja"> Project 1</a></li>
+                    <li><a href="http://p3.cpmi.ninja"> Project 3</a></li>
+                    <li><a href="http://p4.cpmi.ninja"> Project 4</a></li>
+                </ul>
+            </div>
+        </footer>
     </div>
-    <footer>
-        <div class="container footer">
-            <h6>Links to projects:</h6>
-            <ul class="footer-list">
-                <li><a href="http://p1.cpmi.ninja"> Project 1</a></li>
-                <li><a href="http://p3.cpmi.ninja"> Project 3</a></li>
-                <li><a href="http://p4.cpmi.ninja"> Project 4</a></li>
-            </ul>
-        </div>
-    </footer>
+
 </body>
 
 
