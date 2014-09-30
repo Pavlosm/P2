@@ -8,6 +8,76 @@
 
     <?php require('logic.php');?>
 
+    <style type="text/css">
+        .container {
+            background-color: #F2F8FF;
+            max-width: 900px;
+        }
+
+        .header {
+            color: #e5eaff;
+            min-height: 100px;
+            background-color: #14263d;
+            font-weight: bold;
+            max-width: 900px;
+            border-bottom: solid #071123 thick;
+        }
+
+        .footer {
+            border-top: solid #071123 thick;
+            padding-top: 5px;
+            color: #e5eaff;
+            min-height: 30px;
+            background-color: #14263d;
+        }
+        img {
+            max-width: 60%;
+            height: auto;
+            width: auto\9;
+            cursor: hover;
+        }
+
+        .generator_container {
+            background-color: #e1e5ec;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 40px;
+            border-radius: 30px;
+            -webkit-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+            -moz-box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+            box-shadow: inset 10px 10px 88px 0px rgba(0,0,0,0.46);
+        }
+
+        .password {
+            max-width: 80%;
+            background-color: #4d506f;
+            font-size: 25px;
+            margin: 10px auto 10px auto;
+            min-width: 60px;
+            border: inset 15px #cee2ff;
+            color: #cee2ff;
+        }
+
+        .btn {
+            background-color: #414f6b;
+            border: outset #c0ba56 thick;
+            color: white;
+        }
+
+        .footer-list {
+            font-size: small;
+            list-style-type: none;
+        }
+
+        h6 {
+            text-decoration: underline;
+        }
+
+        .word-box {
+            -moz-box-sizing: 3px;
+        }
+    </style>
+
 </head>
 
 <body>
