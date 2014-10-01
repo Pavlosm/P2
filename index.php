@@ -132,7 +132,7 @@
                 <img class="xkcd_image" src="password_strength.png" alt="password-strength ">
             </a>
         </div>
-        <h3>What is XKDC and why is it "better" (at least my understanding of it...)</h3>
+        <h3>What is XKCD and why is it "better" (at least my understanding of it...)</h3>
         <h4>Password strength</h4>
         <p>
             Braking a password computationally, is all about searching all possible combinations of the components of
@@ -177,7 +177,7 @@
             standpoint than the simple dumb password 'Pavlos$' (my name)? According to the above it is not; they have
             the same length and use the same character set.
         </p>
-        <h4>xkdc approach</h4>
+        <h4>xkcd approach</h4>
         <p>
             Instead of using the "standard" approach, which is creating an ugly and difficult to memorize password with
             upper and lower case letters, special chars and numbers, we can create a much stronger one which will be
