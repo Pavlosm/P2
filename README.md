@@ -7,7 +7,7 @@ http://p2.cpmi.ninja
 
 Demo URL Link for P2
 --------------------
-
+http://screencast.com/t/9DLrkbbNCXs
 
 Short description
 -----------------

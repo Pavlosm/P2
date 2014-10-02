@@ -89,7 +89,7 @@
         <h2>This is an xkcd password generator</h2>
         <p>
             This page has a password generator which you can use to create a strong easy-memorable xkcd style password.
-            XKDC style password is based on a comic which suggests using words or phrases to create our passwords rather
+            xkcd style password is based on a comic which suggests using words or phrases to create our passwords rather
             than using a single-word ugly password like "pASS%worD7", which is quite hard to memorize. So, the xkcd
             style password you create here will look like more or less like a sequence of "-" separated words.
         </p>
@@ -135,9 +135,9 @@
         <h3>What is XKCD and why is it "better" (at least my understanding of it...)</h3>
         <h4>Password strength</h4>
         <p>
-            Braking a password computationally, is all about searching all possible combinations of the components of
-            the given set that is used to create the password, to find the correct one. This is easier to explain with
-            an example.
+            Braking a password computationally (using brute force search), is all about searching all possible
+            combinations of the components of the given set that is used to create the password, to find the correct
+            one. This is easier to explain with an example.
         </p>
         <p>
             Suppose that you want to create a password using only 2 characters 'a' and 'b', with a length of 2. In this
